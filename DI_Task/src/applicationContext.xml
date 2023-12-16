@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+    <!--    this is the dependency bean-->
+    <bean id="drawbBean2D"
+    class="withSpring.Draw2D"
+    > </bean>
+    <bean id="drawbBean3D" class="withSpring.Draw3D"> </bean>
+
+   <bean id="circle" class="withSpring.CircleShape">
+       <constructor-arg ref="drawbBean2D"/>
+   </bean>
+    <bean id="rectangle" class="withSpring.Rectangle">
+        <property name="drawRectangleShape3D" ref="drawbBean3D"/>
+        <property name="drawRectangleShape2D" ref="drawbBean2D"/>
+    </bean>
+</beans>
+
+
+
+
+

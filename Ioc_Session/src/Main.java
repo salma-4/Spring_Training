@@ -9,7 +9,7 @@ public class Main {
       /*  Shape s= new Circle();
      System.out.print((double)s.calcArea(2));*/
         ApplicationContext container=new ClassPathXmlApplicationContext("applicationContext.xml");
-      
+
         Shape s=container.getBean("circle",Shape.class);
         System.out.println(s.calcArea(2));
       }
