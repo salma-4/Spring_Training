@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <bean id="drawFor2D" class="shapes.Draw2D"></bean>
+    <bean id="drawFor3D" class="shapes.Draw3D"></bean>
+    <!-- constructor injection for circle-->
+    <bean id ="circle" class="shapes.Circle"  >
+        <constructor-arg ref="drawFor2D"/>
+        <constructor-arg ref="drawFor3D"/>
+    </bean>
+    <!--setter injection for square -->
+
+    <bean id="square" class="shapes.Square" scope="prototype">
+        <property name="draw2DForSquare" ref="drawFor2D"/>
+        <property name="draw3DForSquare" ref ="drawFor3D"/>
+    </bean>
+
+</beans>
+
+
+
+
+
