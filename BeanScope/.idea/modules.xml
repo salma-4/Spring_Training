@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/BeanScope.iml" filepath="$PROJECT_DIR$/BeanScope.iml" />
+      <module fileurl="file://$PROJECT_DIR$/BeanScope_LifeCycle(init_destroy).iml" filepath="$PROJECT_DIR$/BeanScope_LifeCycle(init_destroy).iml" />
     </modules>
   </component>
 </project>

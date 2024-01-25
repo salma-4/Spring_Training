@@ -1,5 +1,8 @@
 package shapes;
 
+import drawing.Draw2D;
+import drawing.Draw3D;
+
 public class Square implements Shape {
 
         Draw2D draw2D;

@@ -6,9 +6,15 @@
     http://www.springframework.org/schema/beans/spring-beans.xsd
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
+   <bean id="init-destroy"  class="lifeCycle.DatabaseOperations" init-method="connectToDb" destroy-method="disconnectFromDatabase">
 
-    <bean id="drawFor2D" class="shapes.Draw2D"></bean>
-    <bean id="drawFor3D" class="shapes.Draw3D"></bean>
+   </bean>
+    <bean id="drawFor2D" class="drawing.Draw2D">
+
+    </bean>
+    <bean id="drawFor3D" class="drawing.Draw3D">
+
+    </bean>
     <!-- constructor injection for circle-->
     <bean id ="circle" class="shapes.Circle"  >
         <constructor-arg ref="drawFor2D"/>

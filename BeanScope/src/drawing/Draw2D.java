@@ -1,4 +1,4 @@
-package shapes;
+package drawing;
 
 public class Draw2D {
     public void draw(String shapeName){
