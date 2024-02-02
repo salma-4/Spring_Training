@@ -36,21 +36,32 @@
         <form:form action="formProcessing" modelAttribute="user">
             <div class="form-group">
                 <form:input type="text" class="form-control" placeholder="Enter your name" path="userName" />
+                <br>
+                <form:errors path="userName"/>
             </div>
             <div class="form-group">
                 <form:input type="password" class="form-control" placeholder="************" path="password"/>
+                <br>
+                                <form:errors path="password"/>
+
             </div>
             <div class="form-group">
                 <form:input type="text" class="form-control" placeholder="Salary" path="salary"/>
+                     <br>
+                                                <form:errors path="salary"/>
             </div>
             <div class="form-group">
                 <form:input type="email" class="form-control" placeholder="name899@gmail.com" path=""/>
+                     <br>
+                                                <form:errors path="email"/>
             </div>
             <div class="form-group">
                 <form:select class="form-control" path="country">
                     <form:option value="Egypt" label="Egy"/>
                     <form:option value="Brazil" label="Brazil"/>
                     <form:option value="Saudia Arabia" label="KSA"/>
+                         <br>
+                           <form:errors path="country"/>
                 </form:select>
             </div>
             <div class="form-group">
@@ -58,11 +69,15 @@
                 <form:radiobutton path="prefProgramming" value="C#"/> C#
                 <form:radiobutton path="prefProgramming" value="PHP"/> PHP
                 <form:radiobutton path="prefProgramming" value="Ruby"/> Ruby
+                     <br>
+                  <form:errors path="prefProgramming"/>
             </div>
             <div class="form-group">
                 <form:checkbox path="operatingSystem" value="MAC"/> MAC
                 <form:checkbox path="operatingSystem" value="Windows"/> Windows
                 <form:checkbox path="operatingSystem" value="Linux"/> Linux
+                     <br>
+                 <form:errors path="operatingSystem"/>
             </div>
             <input type="submit" class="btn btn-danger">
         </form:form>
