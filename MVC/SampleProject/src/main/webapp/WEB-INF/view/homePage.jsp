@@ -1,5 +1,8 @@
 <html>
 <body>
-<h2>This is the Home page of the app</h2>
+<form action="showPage" >
+<input name="studentName" type="text">
+<input type="submit">
+</form>
 </body>
 </html>
