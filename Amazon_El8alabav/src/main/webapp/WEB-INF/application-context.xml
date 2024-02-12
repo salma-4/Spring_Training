@@ -36,7 +36,7 @@
     </bean>
 
     <!-- Step 2: Setup Hibernate session factory -->
-    <bean id="sessionFactory"
+    <!--<bean id="sessionFactory"
           class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
         <property name="dataSource" ref="myDataSource" />
         <property name="packagesToScan" value="com.adminPanel.app" />
@@ -46,13 +46,13 @@
                 <prop key="hibernate.show_sql">true</prop>
             </props>
         </property>
-    </bean>
+    </bean>-->
 
     <!-- Step 3: Setup Hibernate transaction manager -->
-    <bean id="transactionManager"
+    <!--<bean id="transactionManager"
           class="org.springframework.orm.hibernate5.HibernateTransactionManager">
         <property name="sessionFactory" ref="sessionFactory"/>
-    </bean>
+    </bean>-->
 
     <mvc:resources mapping="/resources/**" location="/resources/">
         <mvc:resource-chain resource-cache="true">
