@@ -36,12 +36,9 @@
             </tbody>
         </table>
         <br>
-        <c:if test="${flashAttr.successMessage != null}">
-            <div class="alert alert-success">${flashAttr.successMessage}</div>
-        </c:if>
-        <form:form action="/addProduct" method="get">
-            <input type="submit" class="btn btn-success" value="Add new Product"/>
-        </form:form>
+ <form:form action="addProduct">
+        <input type="submit" class="btn btn-success" value="Add new Product"/>
+    </form:form>
     </div>
 </body>
 </html>

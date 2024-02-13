@@ -1,33 +1,38 @@
 package com.adminPanel.app.controller;
 
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 
-@Component
 @Controller
-public class HomeController
-{
+public class HomeController {
 
-    @RequestMapping("/")
-    public String homePage()
-    {
+//    @Autowired
+//    private ProductService productService; // Inject your product service
+
+    @GetMapping("/")
+    public String homePage() {//Model model
+        //<Product> products = productService.getAllProducts(); // Get all products
+        //model.addAttribute("products", products);
         return "homePage";
     }
-    @GetMapping("/addProduct")
+
+    @GetMapping("/addProduct/new") // Use GET for displaying form
     public String showAddProductForm() {//Model model
-        //model.addAttribute("product", new Product()); // Create a new product object
+       // model.addAttribute("product", new Product()); // Create empty product object
         return "addProducts";
     }
 
-    @PostMapping("/addProduct")
-    public String addProduct() {//@Valid Product product, BindingResult bindingResult
+    @PostMapping("/addProduct") // Use POST for form submission
+    public String addProduct() {///@Valid Product product, BindingResult bindingResult, RedirectAttributes redirectAttributes
 //        if (bindingResult.hasErrors()) {
 //            return "addProducts"; // Return to form with errors
 //        }
 //        productService.saveProduct(product); // Save the product
-        return "redirect:/"; // Redirect to home page after successful addition
+//        redirectAttributes.addFlashAttribute("successMessage", "Product added successfully!"); // Add success message
+//        return "redirect:/"; // Redirect to home page with success message
+        return "addProducts";
+
+
     }
 }
