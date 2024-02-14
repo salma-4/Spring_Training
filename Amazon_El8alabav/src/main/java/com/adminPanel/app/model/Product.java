@@ -14,6 +14,9 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Product {
+    public Product(String name) {
+        this.name = name;
+    }
 
     @Id
     @Column(name="id")
