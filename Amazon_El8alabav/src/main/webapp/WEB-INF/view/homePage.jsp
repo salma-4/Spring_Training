@@ -1,44 +1,66 @@
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-
-<!DOCTYPE html>
 <html>
 <head>
-    <title>Home Page</title>
-    <link rel="stylesheet" href="resources/css/bootstrap.min.css">
-    <link rel="stylesheet" href="resources/css/custom.css">
+    <%--        import Bootstrap--%>
+    <link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/bootstrap.min.css" />">
+
+    <link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/style.css" />">
+
 </head>
 <body>
-    <div class="container">
-
-        <h1>Products</h1>
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Expiration Date</th>
-                    <th>Details</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                <c:forEach var="product" items="${products}">
-                    <tr>
-                        <td>${product.name}</td>
-                        <td>${product.expirationDate}</td>
-                        <td><a href="/product/${product.id}">View Details</a></td>
-                        <td class="actions">
-                            <a href="/product/${product.id}/edit">Edit</a>
-                            <a href="/product/${product.id}/delete">Delete</a>
-                        </td>
-                    </tr>
-                </c:forEach>
-            </tbody>
-        </table>
-        <br>
- <form:form action="addProduct">
+<h1>Products Data</h1>
+<div class="searchDiv">
+    <form action="searchProduct" method="get">
+        Search Product<input type="text" class="form-control" name="searchKey" placeholder="enter product name"/>
+        <input type="submit" value="Search" class="btn btn-success">
+    </form>
+</div>
+<div class="tbl-div">
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Show Details</th>
+            <th scope="col">Add/Update</th>
+            <th scope="col">Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+        <c:forEach items="${productsList}" var="item">
+            <tr>
+                <td>${item.id}</td>
+                <td>${item.name}</td>
+                <td>
+                    <!-- construct an "view details" link with product id -->
+                    <c:url var="detailsLink" value="/showDetails">
+                        <c:param name="productId" value="${item.id}" />
+                    </c:url>
+                    <a class="btn btn-primary" href="<c:out value="${detailsLink}" />">View Details</a>
+                </td>
+                <td>
+                    <!-- construct an "update" link with product id -->
+                    <c:url var="updateLink" value="/updateProduct">
+                        <c:param name="productId" value="${item.id}" />
+                    </c:url>
+                    <a class="btn btn-warning" href="<c:out value="${updateLink}" />">Add/Update</a>
+                </td>
+                <td>
+                    <!-- construct an "delete" link with product id -->
+                    <c:url var="deleteLink" value="/deleteProduct">
+                        <c:param name="productId" value="${item.id}" />
+                    </c:url>
+                    <a class="btn btn-danger" href="<c:out value="${deleteLink}" />">Delete</a>
+                </td>
+            </tr>
+        </c:forEach>
+        </tbody>
+    </table>
+    <form:form action="addProduct" method="get">
         <input type="submit" class="btn btn-success" value="Add new Product"/>
     </form:form>
-    </div>
+</div>
 </body>
+
 </html>
