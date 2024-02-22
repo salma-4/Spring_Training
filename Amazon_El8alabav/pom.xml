@@ -15,12 +15,12 @@
     <jsp-version>2.1</jsp-version>
     <jstl-version>1.2</jstl-version>
     <java.version>1.8</java.version>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
   </properties>
 
   <dependencies>
-    <!--    spring dependencies-->
 
-    <!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-core</artifactId>
@@ -142,6 +142,6 @@
 
   </dependencies>
   <build>
-    <finalName>SpringMvcCrudApp</finalName>
+    <finalName>Products_CRUD</finalName>
   </build>
 </project>

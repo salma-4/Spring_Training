@@ -1,13 +1,11 @@
 package com.adminPanel.app.model;
-
+import com.adminPanel.app.model.Product;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import java.util.Date;
-
-
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(name = "product_details")
