@@ -10,7 +10,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="815178f8-3a5c-4fb2-a941-e4d3aa242f0f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/adminPanel/app/Controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/adminPanel/app/Controller/HomeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Product-Management-API/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Product-Management-API/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Product-Management-API/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Product-Management-API/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Product-Management-API/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Product-Management-API/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Product-Management-API/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Product-Management-API/src/main/webapp/index.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,6 +138,7 @@
       <workItem from="1708802844716" duration="1140000" />
       <workItem from="1708804170205" duration="2139000" />
       <workItem from="1708806471937" duration="294000" />
+      <workItem from="1708808304508" duration="22000" />
     </task>
     <servers />
   </component>
