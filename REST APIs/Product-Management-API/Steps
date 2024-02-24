@@ -1,0 +1,15 @@
+insert productDetails(productDetails )-> productDetails -- POST
+
+update productDetails (productDetails)-> productDetails -- PUT
+
+update product (id)-> void -- Delete
+
+get productDetails (id )-> productDetails -- GET
+
+search productDetails (name) productDetails -- GET
+
+get all products () -> List<Product> --GET
+
+search product (id) -> productDetails -- GET
+
+
