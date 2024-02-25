@@ -14,19 +14,31 @@ public class Dao implements  ProductDao{
 
     @Override
     public Product insert(ProductDetails productDetails) {
-        try{
+        try {
             Session session = sessionFactory.getCurrentSession();
-              Product product =new Product();
-              product.setName(productDetails.getName());
-              product.setProductDetails(productDetails);
-              session.persist(product);
-              return  product;
-        }catch (Exception ex){
+            // Check if the ProductDetails already exists in the database
+            ProductDetails existingProductDetails = session.get(ProductDetails.class, productDetails.getId());
+            if (existingProductDetails == null) {
+                // If not exists, persist the ProductDetails first
+                session.persist(productDetails);
+            } else {
+                // If exists, update the existing ProductDetails with the new data
+                existingProductDetails.setName(productDetails.getName());
+                // Update other fields as needed
+                session.update(existingProductDetails);
+            }
+            // Create a new Product entity and set the ProductDetails
+            Product product = new Product();
+            product.setName(productDetails.getName());
+            product.setProductDetails(productDetails);
+            // Persist the Product entity
+            session.persist(product);
+            return product;
+        } catch (Exception ex) {
             ex.printStackTrace();
         }
         return null;
     }
-
     @Override
     public Product findByID(int id) {
         try{

@@ -23,35 +23,37 @@ public class HomeController
     @Autowired
     private ProductService productService;
 @GetMapping("/")
-public String  show(){return "salmaaaaaaaa";}
-    // TODO insert
+public String  show(){
+    return "200 ok :)";
+}
+
     @PostMapping("/products")
     public ProductDetails insertProduct(@RequestBody ProductDetails productDetails){
 
        return productService.insert(productDetails);
 
     }
-    //TODO update
+
     @PutMapping("/products")
     public ProductDetails updateProduct(@RequestBody ProductDetails productDetails){
         return  productService.update(productDetails);
     }
     //TODO search
 
-    @GetMapping("/products/productDetails")
+    @GetMapping("/products/productDetailsById")
     public ProductDetails getProductDetailsById(@RequestParam int id){
         Product product = productService.findById(id);
         ProductDetails pd =product.getProductDetails();
         return pd;
     }
-    @GetMapping("/products/product")
+    @GetMapping("/products/productById")
     public Product  getProductById(@RequestParam int id){
 
         Product product = productService.findById(id);
         return product;
     }
 
-    //TODO delete
+
     @DeleteMapping("/products")
     public String deleteById(@RequestParam int id){
         productService.deleteById(id);
@@ -63,6 +65,11 @@ public String  show(){return "salmaaaaaaaa";}
         return productService.getAllProducts();
     }
 
+    @GetMapping("/products/productDetailsByName")
+    public List<Product> getProductDetailsByName(@RequestParam String searchKey){
+
+    return productService.findByName(searchKey);
+    }
 
 
 }

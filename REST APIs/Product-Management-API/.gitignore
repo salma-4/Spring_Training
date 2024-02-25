@@ -2,7 +2,11 @@ target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
-
+conf/
+logs
+Product-Management-API.iml
+webapps
+work/
 ### IntelliJ IDEA ###
 .idea/modules.xml
 .idea/jarRepositories.xml

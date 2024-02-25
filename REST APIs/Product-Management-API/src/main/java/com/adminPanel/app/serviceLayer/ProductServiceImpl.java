@@ -37,14 +37,12 @@ public class ProductServiceImpl implements ProductService
 
 
     public ProductDetails update(ProductDetails productDetails) {
-            //search for the related product if exist or not
-            Product product = productDAO.findByProductDetails(productDetails);
-            if (product != null)
-            {
-                productDAO.update(productDetails);
-            }
-            else
-                throw new NullPointerException();
+        //search for the related product if exist or not
+        Product product = productDAO.findByProductDetails(productDetails);
+        if (product != null) {
+            productDAO.update(productDetails);
+        } else
+            throw new NullPointerException();
         return productDetails;
     }
 
