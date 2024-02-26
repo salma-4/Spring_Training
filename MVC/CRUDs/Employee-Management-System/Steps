@@ -1,0 +1,17 @@
+create DB script ==>dn
+defne maven dependencies==>dn
+define hibernate session ==>dn
+test DB  connection ==>dn
+define entities and model==>dn
+dao and daoIMP==>dn
+.implement getAll
+.~         findBYId
+.~          findByName
+.~          insert
+.~          delete
+.~          update
+.~ ^^db functions==>dn
+implement serviceLayer ==>dn
+implement controller==>dn
+implement JSP pages==>dn
+backend validation==>
