@@ -1,10 +1,13 @@
 package com.adminPanel.app.controller;
 
+import com.adminPanel.app.exception.ProductNotFoundException;
+import com.adminPanel.app.exception.response.ProductErrorResponse;
 import com.adminPanel.app.model.Product;
 import com.adminPanel.app.model.ProductDetails;
 import com.adminPanel.app.serviceLayer.ProductService;
 import io.swagger.annotations.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import springfox.documentation.annotations.ApiIgnore;
 
@@ -57,10 +60,19 @@ public String  show(){
             @ApiResponse(code=404 , message = "not found ,there is no product in this id"),
             @ApiResponse(code= 505 ,message = "there is a problem from server side")
     })
-    public ProductDetails getProductDetailsById(@RequestParam int id){
+    public ProductDetails getProductDetailsById(@RequestParam int id) throws ProductNotFoundException{
+    if(id<=0|| id>1000)
+        throw new ProductNotFoundException("invlaid id");
+    else {
+
         Product product = productService.findById(id);
-        ProductDetails pd =product.getProductDetails();
-        return pd;
+        if(product==null)
+            throw new ProductNotFoundException("there is no product int his id");
+         else {
+            ProductDetails pd = product.getProductDetails();
+            return pd;
+        }
+    }
     }
     @GetMapping("/products/productById")
     @ApiOperation(value = "search for product by id")
@@ -70,10 +82,16 @@ public String  show(){
             @ApiResponse(code=404 , message = "not found ,there is no product in this id"),
             @ApiResponse(code= 505 ,message = "there is a problem from server side")
     })
-    public Product  getProductById(@RequestParam int id){
-
-        Product product = productService.findById(id);
-        return product;
+    public Product  getProductById(@RequestParam int id)throws ProductNotFoundException {
+        if(id<=0 || id>1000)
+            throw new ProductNotFoundException("this id is invalid");
+        else {
+            Product product = productService.findById(id);
+            if(product==null)
+                throw new ProductNotFoundException("there is no product in this id"+id);
+            else
+              return product;
+        }
     }
 
 
@@ -85,9 +103,16 @@ public String  show(){
             @ApiResponse(code=404 , message = "not found ,there is no product in this id"),
             @ApiResponse(code= 505 ,message = "there is a problem from server side")
     })
-    public String deleteById(@RequestParam int id){
-        productService.deleteById(id);
-        return "deleted";
+    public String deleteById(@RequestParam int id)throws ProductNotFoundException{
+        if(id<=0 || id>1000)
+            throw new ProductNotFoundException("this id is invalid");
+        else {
+            Product product = productService.findById(id);
+            if(product==null)
+                throw new ProductNotFoundException("there is no product in this id"+id);
+            else
+                return "deleted";
+        }
 
     }
     @GetMapping("/products/allProducts")
@@ -109,10 +134,24 @@ public String  show(){
             @ApiResponse(code=404 , message = "not found ,there is no product in this name"),
             @ApiResponse(code= 505 ,message = "there is a problem from server side")
     })
-    public List<Product> getProductDetailsByName(@RequestParam String searchKey){
-
-    return productService.findByName(searchKey);
+    public List<Product> getProductDetailsByName(@RequestParam String searchKey)throws ProductNotFoundException{
+      if(searchKey=="")
+          throw new ProductNotFoundException("where is the product name!");
+      else{
+          List<Product> productList= productService.findByName(searchKey);
+                  if(productList.isEmpty())
+                      throw new ProductNotFoundException("there is no product in this name");
+                  else
+                   return productList;
+      }
     }
 
-
+@ExceptionHandler
+    public ProductErrorResponse handlerForProductNotFound(ProductNotFoundException exception){
+      ProductErrorResponse errorResponse = new ProductErrorResponse();
+      errorResponse.setCode(HttpStatus.NOT_FOUND.value());
+      errorResponse.setMessage(exception.getMessage());
+      errorResponse.setTimeStamp(System.currentTimeMillis());
+      return  errorResponse;
+}
 }
