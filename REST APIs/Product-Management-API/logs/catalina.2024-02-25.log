@@ -41,12 +41,12 @@
 25-Feb-2024 02:57:44.322 WARNING [localhost-startStop-1] org.springframework.context.support.AbstractApplicationContext.refresh Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping': Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'homeControllerDeprecated' method 
 com.adminPanel.app.controller.HomeControllerDeprecated#updateProduct(ProductDetails)
 to {PUT [/products]}: There is already 'homeController' bean method
-com.adminPanel.app.controller.HomeController#updateProduct(ProductDetails) mapped.
+com.adminPanel.app.controller.ProductsController#updateProduct(ProductDetails) mapped.
 25-Feb-2024 02:57:44.327 SEVERE [localhost-startStop-1] org.springframework.web.servlet.FrameworkServlet.initServletBean Context initialization failed
 	org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping': Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'homeControllerDeprecated' method 
 com.adminPanel.app.controller.HomeControllerDeprecated#updateProduct(ProductDetails)
 to {PUT [/products]}: There is already 'homeController' bean method
-com.adminPanel.app.controller.HomeController#updateProduct(ProductDetails) mapped.
+com.adminPanel.app.controller.ProductsController#updateProduct(ProductDetails) mapped.
 		at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1788)
 		at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:609)
 		at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531)
@@ -83,7 +83,7 @@ com.adminPanel.app.controller.HomeController#updateProduct(ProductDetails) mappe
 	Caused by: java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'homeControllerDeprecated' method 
 com.adminPanel.app.controller.HomeControllerDeprecated#updateProduct(ProductDetails)
 to {PUT [/products]}: There is already 'homeController' bean method
-com.adminPanel.app.controller.HomeController#updateProduct(ProductDetails) mapped.
+com.adminPanel.app.controller.ProductsController#updateProduct(ProductDetails) mapped.
 		at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.validateMethodMapping(AbstractHandlerMethodMapping.java:644)
 		at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:611)
 		at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:316)
@@ -109,12 +109,12 @@ com.adminPanel.app.controller.HomeController#updateProduct(ProductDetails) mappe
 25-Feb-2024 02:57:48.749 WARNING [http-nio-8080-exec-2] org.springframework.context.support.AbstractApplicationContext.refresh Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping': Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'homeControllerDeprecated' method 
 com.adminPanel.app.controller.HomeControllerDeprecated#updateProduct(ProductDetails)
 to {PUT [/products]}: There is already 'homeController' bean method
-com.adminPanel.app.controller.HomeController#updateProduct(ProductDetails) mapped.
+com.adminPanel.app.controller.ProductsController#updateProduct(ProductDetails) mapped.
 25-Feb-2024 02:57:48.752 SEVERE [http-nio-8080-exec-2] org.springframework.web.servlet.FrameworkServlet.initServletBean Context initialization failed
 	org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping': Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'homeControllerDeprecated' method 
 com.adminPanel.app.controller.HomeControllerDeprecated#updateProduct(ProductDetails)
 to {PUT [/products]}: There is already 'homeController' bean method
-com.adminPanel.app.controller.HomeController#updateProduct(ProductDetails) mapped.
+com.adminPanel.app.controller.ProductsController#updateProduct(ProductDetails) mapped.
 		at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1788)
 		at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:609)
 		at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531)
@@ -155,7 +155,7 @@ com.adminPanel.app.controller.HomeController#updateProduct(ProductDetails) mappe
 	Caused by: java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'homeControllerDeprecated' method 
 com.adminPanel.app.controller.HomeControllerDeprecated#updateProduct(ProductDetails)
 to {PUT [/products]}: There is already 'homeController' bean method
-com.adminPanel.app.controller.HomeController#updateProduct(ProductDetails) mapped.
+com.adminPanel.app.controller.ProductsController#updateProduct(ProductDetails) mapped.
 		at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.validateMethodMapping(AbstractHandlerMethodMapping.java:644)
 		at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:611)
 		at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:316)
@@ -178,12 +178,12 @@ com.adminPanel.app.controller.HomeController#updateProduct(ProductDetails) mappe
 25-Feb-2024 02:58:41.737 WARNING [http-nio-8080-exec-5] org.springframework.context.support.AbstractApplicationContext.refresh Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping': Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'homeControllerDeprecated' method 
 com.adminPanel.app.controller.HomeControllerDeprecated#updateProduct(ProductDetails)
 to {PUT [/products]}: There is already 'homeController' bean method
-com.adminPanel.app.controller.HomeController#updateProduct(ProductDetails) mapped.
+com.adminPanel.app.controller.ProductsController#updateProduct(ProductDetails) mapped.
 25-Feb-2024 02:58:41.740 SEVERE [http-nio-8080-exec-5] org.springframework.web.servlet.FrameworkServlet.initServletBean Context initialization failed
 	org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping': Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'homeControllerDeprecated' method 
 com.adminPanel.app.controller.HomeControllerDeprecated#updateProduct(ProductDetails)
 to {PUT [/products]}: There is already 'homeController' bean method
-com.adminPanel.app.controller.HomeController#updateProduct(ProductDetails) mapped.
+com.adminPanel.app.controller.ProductsController#updateProduct(ProductDetails) mapped.
 		at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1788)
 		at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:609)
 		at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531)
@@ -224,7 +224,7 @@ com.adminPanel.app.controller.HomeController#updateProduct(ProductDetails) mappe
 	Caused by: java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'homeControllerDeprecated' method 
 com.adminPanel.app.controller.HomeControllerDeprecated#updateProduct(ProductDetails)
 to {PUT [/products]}: There is already 'homeController' bean method
-com.adminPanel.app.controller.HomeController#updateProduct(ProductDetails) mapped.
+com.adminPanel.app.controller.ProductsController#updateProduct(ProductDetails) mapped.
 		at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.validateMethodMapping(AbstractHandlerMethodMapping.java:644)
 		at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:611)
 		at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:316)
@@ -644,7 +644,7 @@ com.adminPanel.app.controller.HomeController#updateProduct(ProductDetails) mappe
 25-Feb-2024 03:08:03.340 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [D:\SpringCore\REST APIs\Product-Management-API\conf\Catalina\localhost\Product-Management-API.xml] has finished in [8,781] ms
 25-Feb-2024 03:08:03.343 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
 25-Feb-2024 03:08:03.375 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in 8890 ms
-25-Feb-2024 03:08:16.113 WARNING [http-nio-8080-exec-4] org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.logException Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public com.adminPanel.app.model.ProductDetails com.adminPanel.app.controller.HomeController.insertProduct(com.adminPanel.app.model.ProductDetails)]
+25-Feb-2024 03:08:16.113 WARNING [http-nio-8080-exec-4] org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.logException Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public com.adminPanel.app.model.ProductDetails com.adminPanel.app.controller.ProductsController.insertProduct(com.adminPanel.app.model.ProductDetails)]
 25-Feb-2024 03:09:02.001 WARNING [http-nio-8080-exec-7] org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.logException Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' not supported]
 25-Feb-2024 03:09:10.352 INFO [http-nio-8080-exec-6] org.hibernate.hql.internal.QueryTranslatorFactoryInitiator.initiateService HHH000397: Using ASTQueryTranslatorFactory
 25-Feb-2024 03:09:11.203 WARNING [http-nio-8080-exec-6] org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.logException Resolved [org.springframework.http.converter.HttpMessageNotWritableException: No converter found for return value of type: class java.util.ArrayList]
