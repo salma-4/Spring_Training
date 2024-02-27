@@ -61,18 +61,11 @@ public String  show(){
             @ApiResponse(code= 505 ,message = "there is a problem from server side")
     })
     public ProductDetails getProductDetailsById(@RequestParam int id) throws ProductNotFoundException{
-    if(id<=0|| id>1000)
-        throw new ProductNotFoundException("invlaid id");
-    else {
+
 
         Product product = productService.findById(id);
-        if(product==null)
-            throw new ProductNotFoundException("there is no product int his id");
-         else {
-            ProductDetails pd = product.getProductDetails();
+        ProductDetails pd = product.getProductDetails();
             return pd;
-        }
-    }
     }
     @GetMapping("/products/productById")
     @ApiOperation(value = "search for product by id")
@@ -83,15 +76,7 @@ public String  show(){
             @ApiResponse(code= 505 ,message = "there is a problem from server side")
     })
     public Product  getProductById(@RequestParam int id)throws ProductNotFoundException {
-        if(id<=0 || id>1000)
-            throw new ProductNotFoundException("this id is invalid");
-        else {
-            Product product = productService.findById(id);
-            if(product==null)
-                throw new ProductNotFoundException("there is no product in this id"+id);
-            else
-              return product;
-        }
+        return productService.findById(id);
     }
 
 
@@ -104,16 +89,8 @@ public String  show(){
             @ApiResponse(code= 505 ,message = "there is a problem from server side")
     })
     public String deleteById(@RequestParam int id)throws ProductNotFoundException{
-        if(id<=0 || id>1000)
-            throw new ProductNotFoundException("this id is invalid");
-        else {
-            Product product = productService.findById(id);
-            if(product==null)
-                throw new ProductNotFoundException("there is no product in this id"+id);
-            else
-                return "deleted";
-        }
-
+    productService.deleteById(id);
+   return  "deleted";
     }
     @GetMapping("/products/allProducts")
     @ApiOperation(value = "show all products")
@@ -135,15 +112,7 @@ public String  show(){
             @ApiResponse(code= 505 ,message = "there is a problem from server side")
     })
     public List<Product> getProductDetailsByName(@RequestParam String searchKey)throws ProductNotFoundException{
-      if(searchKey=="")
-          throw new ProductNotFoundException("where is the product name!");
-      else{
-          List<Product> productList= productService.findByName(searchKey);
-                  if(productList.isEmpty())
-                      throw new ProductNotFoundException("there is no product in this name");
-                  else
-                   return productList;
-      }
+      return productService.findByName(searchKey);
     }
 
 @ExceptionHandler
