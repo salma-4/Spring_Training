@@ -1,6 +1,7 @@
 package com.adminPanel.app.serviceLayer;
 
 import com.adminPanel.app.dao.ProductDao;
+import com.adminPanel.app.exception.EmptyDataException;
 import com.adminPanel.app.exception.ProductNotFoundException;
 import com.adminPanel.app.model.Product;
 import com.adminPanel.app.model.ProductDetails;
@@ -18,13 +19,13 @@ public class ProductServiceImpl implements ProductService
     private ProductDao productDAO;
 
 
-    public ProductDetails insert(ProductDetails productDetails) {
+    public ProductDetails insert(ProductDetails productDetails) throws EmptyDataException{
         if(!productDetails.getName().isEmpty()) {
             productDAO.insert(productDetails);
             return productDetails;
         }
         else
-            throw new NullPointerException();
+            throw new EmptyDataException("the data entered is invalid may be you forget to enter  an item ");
     }
 
 

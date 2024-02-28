@@ -1,5 +1,6 @@
 package com.adminPanel.app.controller;
 
+import com.adminPanel.app.exception.EmptyDataException;
 import com.adminPanel.app.exception.ProductNotFoundException;
 import com.adminPanel.app.exception.response.ProductErrorResponse;
 import com.adminPanel.app.model.Product;
@@ -33,7 +34,7 @@ public String  show(){
             @ApiResponse(code=201,message = "the product is created"),
             @ApiResponse(code= 505 ,message = "there is a problem from server side"),
     })
-    public ProductDetails insertProduct(@RequestBody ProductDetails productDetails){
+    public ProductDetails insertProduct(@RequestBody ProductDetails productDetails) throws EmptyDataException {
 
        return productService.insert(productDetails);
 
@@ -115,12 +116,5 @@ public String  show(){
       return productService.findByName(searchKey);
     }
 
-@ExceptionHandler
-    public ProductErrorResponse handlerForProductNotFound(ProductNotFoundException exception){
-      ProductErrorResponse errorResponse = new ProductErrorResponse();
-      errorResponse.setCode(HttpStatus.NOT_FOUND.value());
-      errorResponse.setMessage(exception.getMessage());
-      errorResponse.setTimeStamp(System.currentTimeMillis());
-      return  errorResponse;
-}
+
 }
