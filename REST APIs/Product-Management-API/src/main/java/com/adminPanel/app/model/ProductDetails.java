@@ -45,4 +45,21 @@ public class ProductDetails {
     @JsonIgnore
     @OneToOne(mappedBy = "productDetails", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Product product;
+
+    public ProductDetails(int id, String name, Date expirationDate, String manufacturer, double price, boolean available) {
+        this.id = id;
+        this.name = name;
+        this.expirationDate = expirationDate;
+        this.manufacturer = manufacturer;
+        this.price = price;
+        this.available = available;
+    }
+
+    public ProductDetails(String name, Date expirationDate, String manufacturer, double price, boolean available) {
+        this.name = name;
+        this.expirationDate = expirationDate;
+        this.manufacturer = manufacturer;
+        this.price = price;
+        this.available = available;
+    }
 }
