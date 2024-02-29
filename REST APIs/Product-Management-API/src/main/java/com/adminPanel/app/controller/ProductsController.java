@@ -3,13 +3,16 @@ package com.adminPanel.app.controller;
 import com.adminPanel.app.exception.EmptyDataException;
 import com.adminPanel.app.exception.ProductNotFoundException;
 import com.adminPanel.app.exception.response.ProductErrorResponse;
+import com.adminPanel.app.model.AnotherApiData;
 import com.adminPanel.app.model.Product;
 import com.adminPanel.app.model.ProductDetails;
 import com.adminPanel.app.serviceLayer.ProductService;
 import io.swagger.annotations.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
 import springfox.documentation.annotations.ApiIgnore;
 
 import java.util.List;
@@ -116,5 +119,23 @@ public String  show(){
       return productService.findByName(searchKey);
     }
 
+    //way to microservices ):
+    @GetMapping("/callingAnother")
+ public String callingAnotherApi(){
+     String url ="https://jsonplaceholder.typicode.com/posts/1";
+        RestTemplate restTemplate = new RestTemplate();
+        AnotherApiData data=restTemplate.getForObject(url,AnotherApiData.class);
+        return data.getBody();
+     }
 
+    @GetMapping("/callingAnotherApi")
+    public ResponseEntity<String> callingAnotherApi1() {
+        String url = "https://jsonplaceholder.typicode.com/posts/1";
+        RestTemplate restTemplate = new RestTemplate();
+        ResponseEntity<String> response = restTemplate.getForEntity(url, String.class);
+
+        return response;
+    }
+    //==> we can use all http  methods
+    
 }
