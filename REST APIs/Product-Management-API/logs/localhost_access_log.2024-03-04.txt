@@ -1,6 +1,0 @@
-0:0:0:0:0:0:0:1 - - [04/Mar/2024:22:32:43 +0200] "GET /Product-Management-API HTTP/1.1" 302 -
-0:0:0:0:0:0:0:1 - - [04/Mar/2024:22:32:44 +0200] "GET /Product-Management-API HTTP/1.1" 302 -
-0:0:0:0:0:0:0:1 - - [04/Mar/2024:22:32:44 +0200] "GET /Product-Management-API/ HTTP/1.1" 200 9
-0:0:0:0:0:0:0:1 - - [04/Mar/2024:22:32:44 +0200] "GET /Product-Management-API/ HTTP/1.1" 200 9
-0:0:0:0:0:0:0:1 - - [04/Mar/2024:22:57:34 +0200] "GET /favicon.ico HTTP/1.1" 404 682
-0:0:0:0:0:0:0:1 - - [04/Mar/2024:22:57:35 +0200] "GET /favicon.ico HTTP/1.1" 404 682
