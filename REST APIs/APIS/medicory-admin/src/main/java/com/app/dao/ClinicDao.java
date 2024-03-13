@@ -5,13 +5,13 @@ import com.app.model.Clinic;
 import java.util.List;
 
 public interface ClinicDao {
-    public Clinic insertClinic(Clinic clinic);
-    public Clinic updateClinic(Clinic newClinic);
-    public List<Clinic> getAllClinics();
-    public Clinic getClinicById(Long id);
-    public List<Clinic> getClinicsBName(String name);
-    public Clinic getClinicByEmail(String email);
-    public void deleteClinicById(Long id);
+     Clinic insertClinic(Clinic clinic);
+     Clinic updateClinic(Clinic newClinic);
+     List<Clinic> getAllClinics();
+     Clinic getClinicById(Long id);
+     List<Clinic> getClinicsBName(String name);
+     Clinic getClinicByEmail(String email);
+     void deleteClinicById(Long id);
 
 
 }

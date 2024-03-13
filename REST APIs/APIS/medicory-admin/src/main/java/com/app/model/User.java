@@ -38,5 +38,7 @@ public class User {
     private Owner owner;
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Clinic clinic;
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private Lab lab;
 
 }
