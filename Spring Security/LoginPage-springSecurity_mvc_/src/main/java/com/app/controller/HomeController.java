@@ -18,4 +18,8 @@ public class HomeController {
         //model.addAttribute("loginForm", new LoginForm());
         return "loginPage";
     }
+    @GetMapping("/system")
+    public  String showSystem(){
+        return  "system";
+    }
 }

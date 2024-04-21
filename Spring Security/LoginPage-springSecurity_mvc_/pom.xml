@@ -77,8 +77,6 @@
       <artifactId>spring-security-taglibs</artifactId>
       <version>5.0.0.RELEASE</version>
     </dependency>
-
-
   </dependencies>
   <build>
     <finalName>LoginPage-springSecurity_mvc_</finalName>

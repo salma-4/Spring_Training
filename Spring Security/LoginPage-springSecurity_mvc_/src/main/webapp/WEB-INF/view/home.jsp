@@ -10,7 +10,16 @@
 <body>
 
 <h1>hello</h1>
+<p>
+    User : <security:authentication property="principal.username"/>
+</p>
+<p>
+  Role :   <security:authentication property="principal.authorities"/>
+</p>
+<p>
+    <a href="${pageContext.request.contextPath}/system" class="btn btn-info">System Page</a>
 
+</p>
 <form:form method="post" action="${pageContext.request.contextPath}/logout">
     <input type="submit" value="logout"/>
 </form:form>
