@@ -17,15 +17,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
               auth
                 .inMemoryAuthentication()
                 .withUser(users.username("salma").password("123").roles("MANAGER"))
-                .withUser(users.username("sara").password("12345").roles("ADMIN","MANAGER"));
+                .withUser(users.username("sara").password("12345").roles("ADMIN"));
 
     }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/").hasRole("MANAGER")
-                .antMatchers("/system").hasRole("ADMIN")
+                .antMatchers("/").hasAnyRole("MANAGER","ADMIN")
+                .antMatchers("/systems/**").hasRole("ADMIN")
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
@@ -34,7 +34,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .permitAll()
                 .and()
                 .logout()
-                .permitAll();
+                .permitAll()
+                .and()
+                .exceptionHandling()
+                .accessDeniedPage("/accessDenied");
 
     }
 }
