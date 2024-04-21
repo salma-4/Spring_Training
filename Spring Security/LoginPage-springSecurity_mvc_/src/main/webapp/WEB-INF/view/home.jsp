@@ -22,10 +22,12 @@
 <p>
   Role :   <security:authentication property="principal.authorities"/>
 </p>
+<security:authorize  access="hasAnyRole('ADMIN')">
 <p>
     <a href="${pageContext.request.contextPath}/systems" class="btn btn-info">System Page</a>
-
 </p>
+<p>this part is hidden from anyone except with role *ADMIN*</p>
+</security:authorize>
 <form:form method="post" action="${pageContext.request.contextPath}/logout">
     <input type="submit" value="logout" class="btn btn-danger"/>
 </form:form>
