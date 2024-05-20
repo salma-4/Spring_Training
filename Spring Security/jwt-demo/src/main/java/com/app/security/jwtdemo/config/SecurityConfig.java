@@ -14,26 +14,26 @@ import org.springframework.security.web.SecurityFilterChain;
 @Configuration
 public class SecurityConfig {
 
-    @Bean
-    UserDetailsService userDetailsService(){
-        // manage user details ==> local memo
-
-        InMemoryUserDetailsManager userDetailsManager = new InMemoryUserDetailsManager();
-        UserDetails user = User
-                .withUsername("salma")
-                .password(passwordEncoder().encode("1234"))
-                .authorities("read")
-                .build();
-        userDetailsManager.createUser(user);
-        return userDetailsManager;
-    }
+//    @Bean
+//    UserDetailsService userDetailsService(){
+//        // manage user details ==> local memo
+//
+//        InMemoryUserDetailsManager userDetailsManager = new InMemoryUserDetailsManager();
+//        UserDetails user = User
+//                .withUsername("salma")
+//                .password(passwordEncoder().encode("1234"))
+//                .authorities("read")
+//                .build();
+//        userDetailsManager.createUser(user);
+//        return userDetailsManager;
+//    }
     @Bean
     BCryptPasswordEncoder passwordEncoder (){
         return new  BCryptPasswordEncoder();
     }
     @Bean
     SecurityFilterChain  filterChain (HttpSecurity http ) throws  Exception{
-        http.httpBasic();
+        http.formLogin();
         //any request to the application is authenticated.
         http.authorizeHttpRequests().anyRequest().authenticated();
         return http.build();
